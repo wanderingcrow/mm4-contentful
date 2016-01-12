@@ -1,0 +1,25 @@
+---
+title: Welcome to Middleman
+---
+
+.welcome
+  .logo= image_tag 'middleman-logo.svg'
+  h1 Middleman is Running
+  p.doc
+    = link_to 'Read Documentation Online', 'https://middlemanapp.com', target: '_blank'
+
+
+section.contentful-sample
+  article
+    - data.playground.blogPost.each do |id, blogPost|
+
+      / leave this line out if you'd rather cycle through all of the entries
+      / this is how you'd just pull in content for one entry
+      - if blogPost.id == '3Pe9giC88oQoCmSie6wsSC'
+
+        / if you want to pull in your image assets
+        / note the width, your original assets in Contentful can be HUGE, but you specify the width
+        img src="#{ blogPost.heroImage.url }?w=900"
+
+        / you'll want your main content to be parsed from markdown
+        = Kramdown::Document.new(blogPost.body).to_html
