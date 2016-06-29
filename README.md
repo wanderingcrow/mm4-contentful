@@ -19,3 +19,6 @@ Netlify is a great webhost and works flawlessly with the contentful_middleman ge
 ### Other Options
 
 The contentful_middleman gem is great for a lot of reasons (including being able to produce dynamic pages like you'd want in a blog). If you just need minor snippets of content though (and you're not doing new dynamicallly created pages), you might want to import Contentful data via Angular. It's a 10-15 second wait before you see new content vs the 1-5 minutes it takes Netlify to push a new build.
+
+### Potential Issues
+You might have trouble with the bundle install, specifically with eventmachine, [this](https://github.com/eventmachine/eventmachine/issues/643) might help.
