@@ -11,9 +11,9 @@ page '/*.json', layout: false
 page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload
+end
 
 # contentful info
 activate :contentful do |f|
