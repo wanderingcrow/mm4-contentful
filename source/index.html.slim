@@ -11,15 +11,26 @@ title: Welcome to Middleman
 
 section.contentful-sample
   article
-    - data.playground.blogPost.each do |id, blogPost|
+    h1 Example of Just One Article
+    - if Dir.exist?(config.data_dir)
+      - data.playground.blogPost.each do |id, blogPost|
 
-      / leave this line out if you'd rather cycle through all of the entries
-      / this is how you'd just pull in content for one entry
-      - if blogPost.id == '3Pe9giC88oQoCmSie6wsSC'
+        / leave this line out if you'd rather cycle through all of the entries
+        / this is how you'd just pull in content for one entry
+        - if blogPost.id == '3Pe9giC88oQoCmSie6wsSC'
 
-        / if you want to pull in your image assets
-        / note the width, your original assets in Contentful can be HUGE, but you specify the width
-        img src="#{ blogPost.heroImage.url }?w=900"
+          / if you want to pull in your image assets
+          / note the width, your original assets in Contentful can be HUGE, but you specify the width
+          img src="#{ blogPost.heroImage.url }?w=900"
 
-        / you'll want your main content to be parsed from markdown
-        = Kramdown::Document.new(blogPost.body).to_html
+          / you'll want your main content to be parsed from markdown
+          = Kramdown::Document.new(blogPost.body).to_html
+
+
+section.contentful-sample
+  article
+    h1 Example of List of Articles
+    ul
+    - if Dir.exist?(config.data_dir)
+      - data.playground.blogPost.each do |id, blogPost|
+        li: a(href='/post/#{blogPost.slug}') #{blogPost.title}

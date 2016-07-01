@@ -1,0 +1,13 @@
+---
+title: Welcome to Middleman
+---
+
+section.contentful-sample
+  article
+    h1 Single Post
+    - data.playground.blogPost.each do |id, blogPost|
+      h2= blogPost.title
+      - if blogPost.heroImage
+        img src="#{ blogPost.heroImage.url }?w=900"
+      = Kramdown::Document.new(blogPost.body).to_html
+      hr
