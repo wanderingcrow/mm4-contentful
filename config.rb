@@ -41,8 +41,6 @@ if Dir.exist?(config.data_dir)
       }
   end
 end
-# page "/post/#{blogPost[1][:slug]}.html"
-# locals: { blogPost: OpenStruct.new(blogPost[1]) }
 
 # using markdown for contentful stuff
 set :markdown_engine, :kramdown
