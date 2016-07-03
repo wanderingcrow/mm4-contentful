@@ -2,11 +2,12 @@
 title: Middleman and Contentful Sample
 ---
 
-.welcome
-  .logo= image_tag 'middleman-logo.svg'
-  h1 Middleman is Running
-  p.doc
-    = link_to 'Read Documentation Online', 'https://middlemanapp.com', target: '_blank'
+section.mm-intro
+  .welcome
+    .logo= image_tag 'middleman-logo.svg'
+    h1 Middleman is Running
+    p.doc
+      = link_to 'Read Documentation Online', 'https://middlemanapp.com', target: '_blank'
 
 section.contentful-sample
   article
@@ -25,9 +26,7 @@ section.contentful-sample
           / you'll want your main content to be parsed from markdown
           = Kramdown::Document.new(blogPost.body).to_html
 
-
-section.contentful-sample
-  article
+    hr
     h1 Example of List of Articles
     ul
     - if Dir.exist?(config.data_dir)
