@@ -12,7 +12,7 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload, livereload_css_target: 'assets/stylesheets/site.css', livereload_css_pattern: Regexp.new('_.*\.scss')
 end
 
 # pretty URLs
