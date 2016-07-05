@@ -23,6 +23,9 @@ activate :directory_indexes
 # hide private keys
 activate :dotenv
 
+# automagically add alt tags to images
+activate :automatic_alt_tags
+
 # contentful info
 activate :contentful do |f|
   f.space = { playground: 'sihh9h4tsjaz' }
