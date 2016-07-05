@@ -26,7 +26,7 @@ I'm still learning and I'm certainly not doing everything as clean as possible, 
 
 ## Other Things of Interest
 ### Hosting
-Netlify is a great webhost and works flawlessly with the contentful_middleman gem. Essentially, you can tell it to rebuild every time you push a new version to Github or your client adds new content.
+Netlify is a great webhost and works flawlessly with the contentful_middleman gem. Essentially, you can tell it to rebuild every time you push a new version to Github or your client adds new content. Please note, Netlify handles a lot of the [performance stuff](https://www.netlify.com/features) already, including compression, so if you're using them as a host, you don't need to sweat that stuff a whole lot.
 
 ### Other Options
 The contentful_middleman gem is great for a lot of reasons (including being able to produce dynamic pages like you'd want in a blog). If you just need minor snippets of content though (and you're not doing new dynamicallly created pages), you might want to import Contentful data via Angular. It's a 10-15 second wait before you see new content vs the 1-5 minutes it takes Netlify to push a new build.
