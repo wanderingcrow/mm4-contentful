@@ -39,7 +39,7 @@ if f.use_preview_api = 'true'
 end
 ```
 
-So, if you want a Netlify server or dev setup that shows your 'drafts' in Contentful, you simply do an ENV in .env that defines this as true (e.g. `PREVIEW_TOGGLE=true`), otherwise, don't do anything.
+So, if you want a Netlify server or dev setup that shows your 'drafts' in Contentful, you simply do an ENV in .env that defines this as true (e.g. `PREVIEW_TOGGLE=true`), otherwise, don't do anything. Tested and working version [here](http://mm-contentful-preview.netlify.com/).
 
 ### Potential Issues
 You might have trouble with the bundle install, specifically with eventmachine, [this](https://github.com/eventmachine/eventmachine/issues/643) might help.
