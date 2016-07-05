@@ -12,7 +12,9 @@ page '/*.txt', layout: false
 
 # Reload the browser automatically whenever files change
 configure :development do
-  activate :livereload
+  activate :livereload do |live|
+    live.livereload_css_target = "assets/stylesheets/all.css"
+  end
 end
 
 # pretty URLs
@@ -25,6 +27,9 @@ activate :dotenv
 activate :contentful do |f|
   f.space = { playground: 'sihh9h4tsjaz' }
   f.access_token = ENV['CONTENTFUL_TOKEN']
+  if f.use_preview_api = 'true'
+    f.use_preview_api = ENV['PREVIEW_TOGGLE']
+  end
   f.cda_query = { limit: 10000 }
   f.content_types = {
     blogPost: 'k5KOOOcoDKgAsUAOgaKMg'
