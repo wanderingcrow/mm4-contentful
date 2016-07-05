@@ -9,10 +9,10 @@ I prefer Slim (quite a bit) over ERB, so you'll need that gem. Sass or Scss does
 
 ## Install
 1. `bundle install`
-1. create a `.env` file at the root and use something like this: `CONTENTFUL_TOKEN='your-token-here'`
+1. create a `.env` file at the root and use something like this: `CONTENTFUL_TOKEN=your-token-here`
 1. In the `config.rb` file, change your space and content types.
-1. `middleman-contentful`
-1. `middleman-server`
+1. `middleman contentful`
+1. `middleman server`
 
 ----
 
