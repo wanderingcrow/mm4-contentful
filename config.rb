@@ -32,14 +32,12 @@ activate :contentful do |f|
 end
 
 if Dir.exist?(config.data_dir)
-  data.playground.blogPost.each do |id, blogPost|
-    proxy "post/#{ blogPost.slug }", "post/template.html", :ignore => true, layout: 'post-template',
-      :locals => {
-        :title => blogPost.title,
-        :body => blogPost.body,
-        :heroImage => blogPost.heroImage,
-      }
+
+  data.playground.blogPost.each do |blogPost|
+    proxy "post/#{ blogPost[1][:slug] }", "post/template.html", :ignore => true, :layout => 'layout', :locals => { blogPost: OpenStruct.new(blogPost[1]) }
   end
+
+  # add more content models here
 end
 
 # using markdown for contentful stuff
