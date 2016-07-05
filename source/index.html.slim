@@ -30,5 +30,10 @@ section.contentful-sample
     h1 Example of List of Articles
     ul
     - if Dir.exist?(config.data_dir)
-      - data.playground.blogPost.each do |id, blogPost|
+      - data.playground.blogPost.sort_by{ |id, blogPost| blogPost.title }.each do |id, blogPost|
         li: a(href='/post/#{blogPost.slug}') #{blogPost.title}
+
+    / please note the above code: .sort_by{ |id, blogPost| blogPost.title }
+    / this is how you can sort by something, super handy
+    / if you want to sort by an array, you can do that as well:
+    / .sort_by{ |id, blogPost| [blogPost.something, blogPost.somethingElse] }
