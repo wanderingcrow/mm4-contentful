@@ -1,8 +1,8 @@
-/.bundle
-/build
-/.sass-cache
-/.cache
+.bundle
+build
+.sass-cache
+.cache
 .DS_Store
-/node_modules
-/data
+node_modules
+data
 .env
