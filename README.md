@@ -5,16 +5,22 @@ This might help other people. It's using Middleman V4 and the beta Contentful Mi
 
 I prefer Slim (quite a bit) over ERB, so you'll need that gem. Sass or Scss doesn't matter, I prefer the Sass indented syntax, but you can use either or mix and match.
 
-This mainly exists to show you how to do a few key things, but in production, you're obviously going to do a few things differently.
-
 ----
 
-## Start It Up
+## Install
 1. `bundle install`
 1. create a `.env` file at the root and use something like this: `CONTENTFUL_TOKEN='your-token-here'`
 1. In the `config.rb` file, change your space and content types.
 1. `middleman-contentful`
 1. `middleman-server`
+
+----
+
+## Demo Site and Repo
+- [Demo Site](http://mm-contentful-example.netlify.com/)
+- [Public Repo](https://github.com/javaporter/mm4-contentful)
+
+I'm still learning and I'm certainly not doing everything as clean as possible, if you want to improve on this, please feel free to fork and request a pull request.
 
 ----
 
@@ -24,6 +30,16 @@ Netlify is a great webhost and works flawlessly with the contentful_middleman ge
 
 ### Other Options
 The contentful_middleman gem is great for a lot of reasons (including being able to produce dynamic pages like you'd want in a blog). If you just need minor snippets of content though (and you're not doing new dynamicallly created pages), you might want to import Contentful data via Angular. It's a 10-15 second wait before you see new content vs the 1-5 minutes it takes Netlify to push a new build.
+
+### dotenv and preview API
+By design, dotenv can't have a value of 'false'. So in the config file I put this:
+```Ruby
+if f.use_preview_api = 'true'
+  f.use_preview_api = ENV['PREVIEW_TOGGLE']
+end
+```
+
+So, if you want a Netlify server or dev setup that shows your 'drafts' in Contentful, you simply do an ENV in .env that defines this as true (e.g. `PREVIEW_TOGGLE=true`), otherwise, don't do anything.
 
 ### Potential Issues
 You might have trouble with the bundle install, specifically with eventmachine, [this](https://github.com/eventmachine/eventmachine/issues/643) might help.
