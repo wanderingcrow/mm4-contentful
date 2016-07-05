@@ -1,12 +1,8 @@
----
-title: Welcome to Middleman
----
-
 section.contentful-sample
   article
-    h1 Single Post
+    h1 Single Post Example
+    hr
     h2= title
     - if heroImage
       img src="#{ heroImage.url }?w=900"
     = Kramdown::Document.new(body).to_html
-    hr

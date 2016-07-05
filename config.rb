@@ -33,7 +33,7 @@ end
 
 if Dir.exist?(config.data_dir)
   data.playground.blogPost.each do |id, blogPost|
-    proxy "post/#{ blogPost.slug }", "post/template.html", :ignore => true, layout: 'layout',
+    proxy "post/#{ blogPost.slug }", "post/template.html", :ignore => true, layout: 'post-template',
       :locals => {
         :title => blogPost.title,
         :body => blogPost.body,
