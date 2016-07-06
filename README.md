@@ -22,6 +22,9 @@ I prefer Slim (quite a bit) over ERB, so you'll need that gem. Sass or Scss does
 
 I'm still learning and I'm certainly not doing everything as clean as possible, if you want to improve on this, please feel free to fork and request a pull request.
 
+## Official Examples
+Contentful has some [official examples](https://github.com/contentful/contentful_middleman_examples) which may also help.
+
 ----
 
 ## Other Things of Interest
