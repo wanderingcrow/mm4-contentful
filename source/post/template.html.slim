@@ -7,4 +7,6 @@ section.contentful-sample
     h2= blogPost.title
     - if blogPost.heroImage
       img src="#{ blogPost.heroImage.url }?w=900"
+    - if blogPost.date
+      time= blogPost.date.strftime('%d %b %Y')
     = Kramdown::Document.new(blogPost.body).to_html
