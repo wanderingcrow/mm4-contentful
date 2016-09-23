@@ -3,7 +3,7 @@ I've come to rely quite heavily on Middleman and Contentful in my workflow. The 
 
 This might help other people. It's using Middleman V4 and the beta Contentful Middleman gem.
 
-I prefer Slim (quite a bit) over ERB, so you'll need that gem. Sass or Scss doesn't matter, I prefer the Sass indented syntax, but you can use either or mix and match.
+I prefer Slim (quite a bit) over ERB, so you'll need that gem. Sass or Scss doesn't matter, I don't have a consistent opinion on the Sass syntax, but you can use either `.sass` or `scss` or mix and match.
 
 ----
 
