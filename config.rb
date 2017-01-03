@@ -33,7 +33,7 @@ activate :contentful do |f|
   if f.use_preview_api = 'true'
     f.use_preview_api = ENV['PREVIEW_TOGGLE']
   end
-  f.cda_query = { limit: 10000 }
+  f.cda_query = { limit: 1000 }
   f.content_types = {
     blogPost: 'k5KOOOcoDKgAsUAOgaKMg'
   }
