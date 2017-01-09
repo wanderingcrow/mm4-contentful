@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'middleman'
 gem 'middleman-livereload'
+gem 'rake'
 gem 'sassc'
 gem 'slim'
 gem 'middleman-dotenv'
