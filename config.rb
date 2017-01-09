@@ -42,7 +42,7 @@ end
 if Dir.exist?(config.data_dir)
 
   data.playground.blogPost.each do |blogPost|
-    proxy "post/#{ blogPost[1][:slug] }.html", "post/template.html", :ignore => true, :layout => 'layout', :locals => { blogPost: OpenStruct.new(blogPost[1]) }
+    proxy "post/#{ blogPost[1][:slug] }/index.html", "post/template.html", :ignore => true, :layout => 'layout', :locals => { blogPost: OpenStruct.new(blogPost[1]) }
   end
 
   # add more content models here

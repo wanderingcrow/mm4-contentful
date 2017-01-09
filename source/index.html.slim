@@ -29,7 +29,7 @@ section.contentful-sample
     ul
     - if Dir.exist?(config.data_dir)
       - data.playground.blogPost.sort_by{ |id, blogPost| blogPost.title }.each do |id, blogPost|
-        li: a(href='/post/#{blogPost.slug}.html') #{blogPost.title}
+        li: a(href='/post/#{blogPost.slug}') #{blogPost.title}
 
     / please note the above code: .sort_by{ |id, blogPost| blogPost.title }
     / this is how you can sort by something, super handy
