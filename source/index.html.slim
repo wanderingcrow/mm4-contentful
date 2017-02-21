@@ -35,3 +35,6 @@ section.contentful-sample
     / this is how you can sort by something, super handy
     / if you want to sort by an array, you can do that as well:
     / .sort_by{ |id, blogPost| [blogPost.something, blogPost.somethingElse] }
+
+    / also, if you want to pull something in with specific keywords, for example:
+    / - data.wfp.stories.select { |id, s| s.keyword && s.keyword.include?("featured") }.each do |id, stories|
