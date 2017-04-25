@@ -9,7 +9,7 @@ section.mm-intro
 
 section.contentful-sample
   article
-    h1 Example of Just One Article
+    h2 Example of Just One Article
     - if Dir.exist?(config.data_dir)
       - data.playground.blogPost.each do |id, blogPost|
 
@@ -19,13 +19,13 @@ section.contentful-sample
 
           / if you want to pull in your image assets
           / note the width, your original assets in Contentful can be HUGE, but you specify the width
-          img src="#{ blogPost.heroImage.url }?w=900"
+          img src="#{ blogPost.hero_image.url }?w=900"
 
           / you'll want your main content to be parsed from markdown
           = Kramdown::Document.new(blogPost.body).to_html
 
     hr
-    h1 Example of List of Articles
+    h2 Example of List of Articles
     ul
     - if Dir.exist?(config.data_dir)
       - data.playground.blogPost.sort_by{ |id, blogPost| blogPost.title }.each do |id, blogPost|
@@ -38,3 +38,15 @@ section.contentful-sample
 
     / also, if you want to pull something in with specific keywords, for example:
     / - data.wfp.stories.select { |id, s| s.keyword && s.keyword.include?("featured") }.each do |id, stories|
+
+
+    hr
+    h2 Example of Sorting and Reverse
+    p You can sort by date, just include the last four (or whatever number), and reverse the order. This happens like an order of operations, so `last(4).reverse` may be different than `reverse.last(4)`.
+    ul
+      - if Dir.exist?(config.data_dir)
+        - data.playground.blogPost.sort_by{ |id, blogPost| blogPost.date }.last(2).reverse.each do |id, blogPost|
+          li
+            time= blogPost.date.strftime('%d %b %Y')
+            | &nbsp;&mdash;&nbsp;
+            = blogPost.title
